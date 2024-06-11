@@ -7,240 +7,44 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<style type="text/css">
-    
+<style type="text/css">  </style>
 
-
-    :root{
-        --bg1:#040406;
-        --bg2:#323234;
-        --boxShodow:#010203;
-        --Shodow1:#040406;
-        --Shodow2:#444446;
-        --SforIcon1:#2a2b2c;
-        --SforIcon2:#020305;
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        user-select: none;
-
-    }
-
-    body{
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background:linear-gradient(135deg, var(--bg1), var(--bg2));
-
-    }
-
-    #container{
-
-        background:linear-gradient(135deg,var(--bg2),var(--bg1));
-        box-shadow: 0 0 8px 6px var(--boxShodow);
-        border-radius: 32px;
-
-    }
-
-
-    h1{
-        font-family: sans-serif;
-        margin: 32px auto;
-        color: #4f7afe;
-
-    }
-
-
-
-
-
-    #user,#email,#lock{
-
-        width: 240px;
-        height: 42px;
-        margin: 16px;
-        background: none;
-        font-size: 18px;
-        color: #777;
-        box-shadow: inset 4px 4px 8px var(--Shodow1),inset -4px -4px 8px var(--Shodow2);
-        border-radius: 16px;
-        
-    
-    
-    }
-
-
-
-    input{
-        background:none ;
-        height: 42px;
-        border: none;
-        outline: none;
-        padding-left: 6px;
-        color: #777;
-        font-size: 14px;
-
-
-
-    }
-
-
-
-    #btn{
-        width: 240px;
-        height: 42px;
-        background: none;
-        border-radius: 32px;
-        border: none;
-        outline: none;
-        font-size: 20px;
-        color: #4f7af4;
-        box-shadow: 4px 4px 8px var(--Shodow1), -4px -4px 8px var(--Shodow2) ;
-        margin: 16px;
-
-    }
-
-
-    #btn:hover{
-        color: #1f5aff;
-        box-shadow: 6px 6px 10px var(--Shodow1), -6px -6px 10px var(--Shodow2) ;
-
-    }
-
-
-#btn:active{
-
-    box-shadow:inset 4px 4px 8px var(--Shodow1),inset -4px -4px 8px var(--Shodow2) ;
-    font-size: 16px;
-
-}
-
-
-
-
-
-
-
-
-h4{
-    color: #777;
-    margin: 16px auto;
-
-}
-
-
-#social_icon i{
-    margin: 0 10px;
-    padding: 8px;
-    width: 36px;
-    height: 36px;
-    box-shadow: inset 3px 3px 8px var(--SforIcon1), inset -3px -3px 8px var(--SforIcon2),1px 1px 2px var(--SforIcon2),-1px -1px 2px var(--SforIcon1);
-    border-radius: 50%;
-    color: #4f7af1;
-    transition-duration: 0.2s;
-
-}
-
-
-
-
-
-#social_icon i:hover{
-    transform: scale(1.2);
-}
-
-
-
-#social_icon i:active{
-    transform: scale(1.9);
-
-}
-
-#foot{
-    color: #777;
-    margin: 16px;
-}
-
-#sign{
-    color: #4f7af1;
-}
-
-#drk{
-    display: none;
-    color: #112;
-
-}
-
-
-
-#lt{
-    color: #eef;
-
-}
-
-
-#mode button{
-    padding: 4px 8px;
-    background:none ;
-    border: none;
-    outline: none;
-    box-shadow: 4px 4px 8px var(--Shodow1),-4px -4px 8px var(--Shodow2);
-    border-radius: 8px;
-    font-size: 16px;
-    transition-duration: 0.2s;
-
-
-
-
-
-    
-}
-
-
-
-
-#mode button:hover{
-    transform: scale(1.2);
-}
-
-
-#mode button:active{
-    transform: scale(0.9);
-}
-
-
-
-
-
-
-
-
-
-
-
-</style>
-
-
+<link rel="stylesheet" href="index.css">
 
 </head>
 <body>
-    <div id="container" align="center">
+
+<div id="all"  >
+    
+
+    <div id="mode"  align="center"  >
+        <button id="lt" onclick="light()"> Light mode
+<img src="sun.png" alt="" height="13px" width="13px"  >
+
+        </button>
+        <button id="drk" onclick="dark()">dark mode
+            <img src="night.png"   height="13px" width="13px" >
+        </button>
+    
+    
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+    <div id="container" align="center" >
+        
+    
+
+
+<div> .</div>
         <h1>Sign Up</h1>
+
         <div id="user">
             <i class="fa fa-user"></i>
             <input type="text" placeholder="username">
@@ -255,7 +59,8 @@ h4{
 
         <div id="user">
             <i class="fa fa-lock"></i>
-            <input type="password" placeholder="Create password">
+            <input type="password" id="password" class="password-Field" placeholder="Create password">
+            <span id="togglePassword" class="eye-icon">&#128065;</span>
         </div>
 
         <button id="btn">Sign Up</button>
@@ -263,10 +68,12 @@ h4{
 
         <div id="social_icon">
 
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-google"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-linkedin"></i>
+           <a href="https://www.facebook.com/"> <i class="fa fa-facebook" >
+                
+            </i></a>
+          <a href="https://www.google.com/">  <i class="fa fa-google"></i></a> 
+            <a href="https://x.com/i/flow/login"><i class="fa fa-twitter"></i></a>
+           <a href="https://in.linkedin.com/"> <i class="fa fa-linkedin"></i></a>
 
         </div>
 
@@ -277,30 +84,58 @@ h4{
         </div>
 
 
-
-
-
-<div id="mode">
-    <button id="lt" onclick="light()">Light mode</button>
-    <button id="drk" onclick="dark()">dark mode</button>
-
-
-</div>
-
-
-
-
-
+<div>.</div>
 
 
 
 
     </div>
+</div>
 
 </body>
 
 
 <script type="text/javascript">
+
+
+
+
+
+
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordField = document.getElementById('password');
+    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField.setAttribute('type', type);
+    
+    if (type === 'password') {
+        this.textContent = '\u{1F441}'; 
+    } else {
+        this.textContent = '\u{1F441}'; 
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
