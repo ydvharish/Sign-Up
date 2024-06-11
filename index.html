@@ -59,8 +59,8 @@
 
         <div id="user">
             <i class="fa fa-lock"></i>
-            <input type="password" id="password" class="password-Field" placeholder="Create password">
-            <span id="togglePassword" class="eye-icon">&#128065;</span>
+            <input type="password" id="password" class="password-Field" placeholder="Create password " >
+            <!-- <span id="togglePassword" class="eye-icon">&#128065;</span> -->
         </div>
 
         <button id="btn">Sign Up</button>
@@ -102,17 +102,17 @@
 
 
 
-document.getElementById('togglePassword').addEventListener('click', function () {
-    const passwordField = document.getElementById('password');
-    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordField.setAttribute('type', type);
+// document.getElementById('togglePassword').addEventListener('click', function () {
+//     const passwordField = document.getElementById('password');
+//     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+//     passwordField.setAttribute('type', type);
     
-    if (type === 'password') {
-        this.textContent = '\u{1F441}'; 
-    } else {
-        this.textContent = '\u{1F441}'; 
-    }
-});
+//     if (type === 'password') {
+//         this.textContent = '\u{1F441}'; 
+//     } else {
+//         this.textContent = '\u{1F441}'; 
+//     }
+// });
 
 
 
